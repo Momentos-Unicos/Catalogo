@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Momentos Únicos | Alquiler de Juegos para Eventos</title>
+<meta name="description" content="Alquiler de inflables, metegoles y tejos para cumpleaños y eventos familiares. Empresa familiar. Entrega e instalación incluida. Consultá por WhatsApp.">
+<meta name="theme-color" content="#2B1F4E">
+<meta property="og:title" content="Momentos Únicos | Alquiler de Juegos para Eventos">
+<meta property="og:description" content="Inflables, metegoles y tejos para que tu evento quede grabado en la memoria de todos.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Momentos Únicos",
+  "description": "Alquiler de juegos para eventos: inflables, metegoles y tejos.",
+  "telephone": "+54 9 11 3628-4435",
+  "priceRange": "$$",
+  "areaServed": "AR"
+}
+</script>
+
+<style>
+/* ============================================================
+   MOMENTOS ÚNICOS — Hoja de estilos
+   Paleta: violeta tinta (estructura/noche), magenta (acento),
+   marigold (spotlight), verde césped (sección Momentos).
+   Tipografía: Fredoka (display, redondeada como un inflable)
+   + Nunito (texto). Firma visual: festón de "castillo" entre
+   secciones, construido con semicírculos CSS (no degradés).
+   ============================================================ */
+
+:root{
+  --violet-ink:#2B1F4E;
+  --violet-ink-deep:#1C1433;
+  --magenta:#C42D64;
+  --magenta-dark:#A31F51;
+  --marigold:#FFB627;
+  --turf:#157A56;
+  --turf-dark:#0F5F43;
+  --cloud:#FFFDF9;
+  --white:#FFFFFF;
+  --ink:#241B3A;
+  --ink-soft:#6B5F87;
+  --whatsapp:#128C4A;
+  --whatsapp-dark:#0E723C;
+  --whatsapp-bright:#25D366;
+
+  --font-display:'Fredoka',sans-serif;
+  --font-body:'Nunito',sans-serif;
+
+  --radius-lg:28px;
+  --radius-md:18px;
+  --radius-sm:12px;
+  --shadow-card:0 10px 30px -12px rgba(36,27,58,.28);
+  --shadow-soft:0 18px 44px -14px rgba(36,27,58,.32);
+  --ease-bounce:cubic-bezier(.34,1.56,.64,1);
+  --transition:.25s ease;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:76px;}
+body{
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--cloud);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+h1,h2,h3{font-family:var(--font-display);line-height:1.15;font-weight:600;}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px;}
+.section-pad{padding:56px 0;}
+@media(min-width:1024px){.section-pad{padding:88px 0;}}
+
+a:focus-visible,button:focus-visible{
+  outline:3px solid var(--magenta);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+}
+
+.noscript-banner{
+  background:var(--marigold);color:var(--ink);text-align:center;
+  padding:12px 20px;font-weight:800;font-size:.9rem;
+}
+
+/* ============ BOTONES ============ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:14px 26px;border-radius:999px;font-weight:800;font-size:.95rem;
+  font-family:var(--font-body);
+  transition:transform var(--transition),box-shadow var(--transition),background var(--transition);
+  white-space:nowrap;
+}
+.btn svg{flex-shrink:0;}
+.btn-lg{padding:16px 32px;font-size:1.02rem;}
+.btn-block{width:100%;margin-top:14px;}
+.btn-whatsapp{
+  background:var(--whatsapp);color:var(--white);
+  box-shadow:0 10px 22px -8px rgba(18,140,74,.55);
+}
+.btn-whatsapp:hover{background:var(--whatsapp-dark);transform:translateY(-3px);box-shadow:0 14px 26px -8px rgba(18,140,74,.6);}
+.btn-outline{
+  background:rgba(255,255,255,.08);color:var(--white);
+  border:2px solid rgba(255,255,255,.55);
+}
+.btn-outline:hover{background:rgba(255,255,255,.18);transform:translateY(-3px);}
+.btn-dark{background:var(--violet-ink);color:var(--white);box-shadow:0 10px 22px -8px rgba(43,31,78,.45);}
+.btn-dark:hover{background:var(--violet-ink-deep);transform:translateY(-3px);}
+.btn-small{padding:9px 18px;font-size:.82rem;}
+
+/* ============ HEADER ============ */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(255,253,249,.92);backdrop-filter:blur(10px);
+  transition:box-shadow var(--transition);
+}
+.header.scrolled{box-shadow:0 4px 22px rgba(36,27,58,.1);}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:70px;}
+.logo{display:flex;align-items:center;gap:9px;}
+.logo-mark{display:block;overflow:hidden;}
+.logo-text{font-family:var(--font-display);font-size:1.22rem;font-weight:600;color:var(--ink);white-space:nowrap;}
+.logo-text span{color:var(--magenta);}
+
+.nav-toggle{display:flex;flex-direction:column;gap:5px;width:30px;height:22px;justify-content:center;z-index:1001;}
+.nav-toggle span{display:block;height:3px;width:100%;background:var(--ink);border-radius:3px;transition:transform .3s ease,opacity .3s ease;}
+.nav-toggle.active span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+.nav-toggle.active span:nth-child(2){opacity:0;}
+.nav-toggle.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+
+.nav-menu{
+  position:fixed;top:70px;left:0;right:0;background:var(--white);
+  display:flex;flex-direction:column;padding:18px;gap:3px;
+  transform:translateY(-140%);transition:transform .35s ease;
+  box-shadow:0 14px 34px rgba(36,27,58,.14);max-height:calc(100vh - 70px);overflow-y:auto;
+}
+.nav-menu.active{transform:translateY(0);}
+.nav-menu a{padding:13px 16px;border-radius:var(--radius-sm);font-weight:800;color:var(--ink);font-size:.98rem;}
+.nav-menu a:hover{background:#FFF1DC;}
+.nav-menu .btn{margin-top:8px;justify-content:center;}
+
+@media(min-width:768px){
+  .nav-toggle{display:none;}
+  .nav-menu{
+    position:static;flex-direction:row;align-items:center;transform:none;
+    background:transparent;box-shadow:none;padding:0;max-height:none;gap:2px;
+  }
+  .nav-menu a{padding:9px 14px;}
+  .nav-menu .btn{margin-top:0;margin-left:10px;}
+}
+
+/* ============ FESTÓN (firma visual) ============ */
+.scallop-row{display:flex;height:16px;overflow:hidden;line-height:0;}
+.scallop-row span{flex:0 0 32px;width:32px;height:16px;border-radius:16px 16px 0 0;margin:0 -1px;}
+.scallop-a{background:var(--violet-ink);}
+.scallop-a span{background:var(--cloud);}
+.scallop-b{background:var(--cloud);}
+.scallop-b span{background:var(--turf);}
+.scallop-c{background:var(--turf);}
+.scallop-c span{background:var(--marigold);}
+.scallop-d{background:var(--marigold);}
+.scallop-d span{background:var(--violet-ink-deep);}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;padding:126px 0 84px;overflow:hidden;text-align:center;
+  background:linear-gradient(150deg,var(--violet-ink) 0%,#3B2A63 48%,var(--violet-ink) 100%);
+  color:var(--white);
+}
+.hero::before,.hero::after{
+  content:'';position:absolute;border-radius:50%;filter:blur(2px);
+}
+.hero::before{width:280px;height:280px;top:-110px;right:-70px;background:rgba(196,45,100,.18);}
+.hero::after{width:230px;height:230px;bottom:-90px;left:-70px;background:rgba(255,182,39,.14);}
+.hero-inner{position:relative;z-index:1;max-width:760px;margin:0 auto;}
+
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.12);
+  padding:9px 18px;border-radius:999px;font-weight:800;font-size:.82rem;
+  letter-spacing:.02em;margin-bottom:22px;color:var(--marigold);
+  opacity:0;animation:popIn .7s var(--ease-bounce) .05s both;
+}
+.hero-title{
+  font-size:clamp(2.05rem,7vw,3.5rem);margin-bottom:18px;
+  opacity:0;animation:popIn .7s var(--ease-bounce) .18s both;
+}
+.hero-title .accent{color:var(--marigold);display:block;}
+.hero-subtitle{
+  font-size:clamp(1rem,2.4vw,1.18rem);opacity:0;max-width:580px;margin:0 auto 30px;
+  color:rgba(255,255,255,.92);
+  animation:popIn .7s var(--ease-bounce) .32s both;
+}
+.hero-actions{
+  display:flex;flex-direction:column;gap:13px;align-items:center;margin-bottom:42px;
+  opacity:0;animation:popIn .7s var(--ease-bounce) .46s both;
+}
+@media(min-width:480px){.hero-actions{flex-direction:row;justify-content:center;}}
+
+.hero-stats{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:30px;
+  opacity:0;animation:popIn .7s var(--ease-bounce) .6s both;
+}
+.stat{display:flex;flex-direction:column;align-items:center;}
+.stat strong{font-family:var(--font-display);font-size:1.5rem;color:var(--marigold);font-weight:600;}
+.stat span{font-size:.82rem;opacity:.82;}
+
+@keyframes popIn{from{opacity:0;transform:translateY(18px) scale(.94);}to{opacity:1;transform:translateY(0) scale(1);}}
+
+/* ============ ENCABEZADOS DE SECCIÓN ============ */
+.section-head{max-width:640px;margin:0 auto 34px;text-align:center;}
+.section-head.light{color:var(--white);}
+.section-title{font-size:clamp(1.6rem,4.6vw,2.3rem);margin-bottom:10px;color:var(--ink);}
+.section-head.light .section-title{color:var(--white);}
+.section-note{color:var(--ink-soft);font-size:1rem;}
+.section-head.light .section-note{color:rgba(255,255,255,.85);}
+
+/* ============ CATÁLOGO ============ */
+.catalog-filters{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:34px;}
+.filter-btn{
+  padding:10px 21px;border-radius:999px;background:var(--white);color:var(--ink);
+  font-weight:800;font-size:.86rem;border:2px solid #F0E4D3;transition:all var(--transition);
+}
+.filter-btn:hover{border-color:var(--magenta);}
+.filter-btn.active{background:var(--violet-ink);color:var(--white);border-color:var(--violet-ink);}
+
+.catalog-grid{display:grid;grid-template-columns:1fr;gap:24px;}
+@media(min-width:640px){.catalog-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1024px){.catalog-grid{grid-template-columns:repeat(3,1fr);gap:28px;}}
+
+.game-card{
+  background:var(--white);border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:var(--shadow-card);display:flex;flex-direction:column;
+  border-top:5px solid transparent;transition:transform var(--transition),box-shadow var(--transition);
+  animation:fadeUp .5s ease both;
+}
+.game-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);}
+.game-card.cat-inflables{border-top-color:var(--magenta);}
+.game-card.cat-metegoles{border-top-color:var(--violet-ink);}
+.game-card.cat-tejos{border-top-color:var(--turf);}
+
+.game-image-wrap{position:relative;aspect-ratio:4/3;overflow:hidden;background:#EFE7DA;}
+.game-image{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+.game-card:hover .game-image{transform:scale(1.06);}
+.game-badge{
+  position:absolute;top:12px;left:12px;color:var(--white);padding:6px 13px;
+  border-radius:999px;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;
+}
+.cat-inflables .game-badge{background:var(--magenta);}
+.cat-metegoles .game-badge{background:var(--violet-ink);}
+.cat-tejos .game-badge{background:var(--turf);}
+
+.game-info{padding:20px;display:flex;flex-direction:column;flex:1;}
+.game-title{font-size:1.12rem;margin-bottom:7px;color:var(--ink);}
+.game-desc{font-size:.89rem;color:var(--ink-soft);margin-bottom:16px;flex:1;}
+.game-footer{display:flex;align-items:baseline;justify-content:space-between;}
+.game-price{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--magenta-dark);}
+.game-price small{font-family:var(--font-body);font-weight:700;font-size:.72rem;color:var(--ink-soft);}
+
+/* ============ MOMENTOS ============ */
+.momentos-section{background:var(--turf);}
+.moments-grid{display:grid;grid-template-columns:1fr;gap:38px 26px;}
+@media(min-width:640px){.moments-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1024px){.moments-grid{grid-template-columns:repeat(3,1fr);}}
+
+.moment-card{
+  position:relative;background:var(--white);border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:var(--shadow-soft);animation:fadeUp .5s ease both;
+}
+.moment-tape{
+  position:absolute;top:-11px;left:26px;width:58px;height:22px;border-radius:2px;
+  background:var(--marigold);opacity:.92;transform:rotate(-5deg);
+  box-shadow:0 3px 6px rgba(0,0,0,.15);z-index:3;
+}
+.moment-card:nth-child(2n) .moment-tape{background:var(--magenta);left:auto;right:26px;transform:rotate(5deg);}
+.moment-card:nth-child(3n) .moment-tape{left:50%;margin-left:-29px;transform:rotate(2deg);right:auto;}
+
+.moment-carousel{position:relative;aspect-ratio:1/1;overflow:hidden;background:#F0E4D3;touch-action:pan-y;}
+.moment-track{display:flex;height:100%;transition:transform .4s ease;}
+.moment-slide{flex:0 0 100%;height:100%;}
+.moment-slide img{width:100%;height:100%;object-fit:cover;}
+
+.moment-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,.92);color:var(--ink);display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;box-shadow:0 4px 10px rgba(0,0,0,.18);transition:background var(--transition);line-height:0;
+}
+.moment-arrow:hover{background:var(--white);}
+.moment-arrow-prev{left:10px;}
+.moment-arrow-next{right:10px;}
+
+.moment-counter{
+  position:absolute;bottom:12px;right:12px;background:rgba(36,27,58,.78);color:var(--white);
+  padding:4px 11px;border-radius:999px;font-size:.72rem;font-weight:800;
+}
+.moment-dots{display:flex;justify-content:center;gap:7px;padding:14px 0 0;}
+.moment-dot{width:8px;height:8px;border-radius:50%;background:#EDE2D2;border:2px solid #EDE2D2;transition:all var(--transition);}
+.moment-dot.active{background:var(--magenta);border-color:var(--magenta);width:22px;border-radius:5px;}
+
+.moment-info{padding:16px 18px 20px;}
+.moment-title{font-weight:800;color:var(--ink);font-size:.96rem;}
+
+/* ============ CTA ============ */
+.cta-section{background:var(--marigold);color:var(--ink);text-align:center;}
+.cta-inner h2{font-size:clamp(1.55rem,4.4vw,2.15rem);margin-bottom:12px;}
+.cta-inner p{opacity:.85;margin-bottom:26px;font-weight:700;}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--violet-ink-deep);color:rgba(255,255,255,.78);padding:52px 0 26px;text-align:center;}
+.footer-logo{display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:12px;}
+.footer-brand{font-family:var(--font-display);font-size:1.28rem;color:var(--white);font-weight:600;}
+.footer-desc{max-width:420px;margin:0 auto 22px;font-size:.9rem;}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:22px;flex-wrap:wrap;}
+.footer-links a{font-weight:800;font-size:.87rem;}
+.footer-links a:hover{color:var(--marigold);}
+.footer-social{display:flex;justify-content:center;gap:13px;margin-bottom:28px;}
+.footer-social a{
+  width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;transition:background var(--transition);
+}
+.footer-social a:hover{background:var(--magenta);}
+.footer-copy{font-size:.78rem;opacity:.6;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);}
+
+/* ============ WHATSAPP FLOTANTE ============ */
+.whatsapp-float{
+  position:fixed;bottom:20px;right:20px;width:58px;height:58px;border-radius:50%;
+  background:var(--whatsapp);color:var(--white);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 26px -6px rgba(18,140,74,.65);z-index:900;animation:pulse 2.6s infinite;
+  transition:transform var(--transition);
+}
+.whatsapp-float:hover{transform:scale(1.08);}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(18,140,74,.55),0 10px 26px -6px rgba(18,140,74,.65);}
+  70%{box-shadow:0 0 0 15px rgba(18,140,74,0),0 10px 26px -6px rgba(18,140,74,.65);}
+  100%{box-shadow:0 0 0 0 rgba(18,140,74,0),0 10px 26px -6px rgba(18,140,74,.65);}
+}
+
+/* ============ ANIMACIÓN DE ENTRADA (tarjetas) ============ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+.game-card:nth-child(1),.moment-card:nth-child(1){animation-delay:.04s;}
+.game-card:nth-child(2),.moment-card:nth-child(2){animation-delay:.09s;}
+.game-card:nth-child(3),.moment-card:nth-child(3){animation-delay:.14s;}
+.game-card:nth-child(4),.moment-card:nth-child(4){animation-delay:.19s;}
+.game-card:nth-child(5),.moment-card:nth-child(5){animation-delay:.24s;}
+.game-card:nth-child(6),.moment-card:nth-child(6){animation-delay:.29s;}
+.game-card:nth-child(7){animation-delay:.34s;}
+</style>
+</head>
+<body>
+
+<noscript>
+  <div class="noscript-banner">Activá JavaScript en tu navegador para ver el catálogo completo y la galería de momentos.</div>
+</noscript>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#inicio" class="logo">
+      <svg class="logo-mark" width="30" height="12" viewBox="0 0 30 12" aria-hidden="true">
+        <circle cx="6" cy="12" r="8" fill="#C42D64"></circle>
+        <circle cx="15" cy="12" r="8" fill="#FFB627"></circle>
+        <circle cx="24" cy="12" r="8" fill="#157A56"></circle>
+      </svg>
+      <span class="logo-text">Momentos <span>Únicos</span></span>
+    </a>
+
+    <nav class="nav-menu" id="navMenu">
+      <a href="#inicio">Inicio</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#momentos">Momentos</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#" id="navWhatsapp" class="btn btn-whatsapp btn-small" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="inicio">
+    <div class="container hero-inner">
+      <span class="hero-eyebrow">✨ Alquiler de juegos para eventos</span>
+      <h1 class="hero-title">Alquilamos diversión,<span class="accent">creamos Momentos Únicos</span></h1>
+      <p class="hero-subtitle">Inflables, metegoles y tejos para que tu cumpleaños, fiesta o evento familiar quede grabado en la memoria de todos.</p>
+      <div class="hero-actions">
+        <a href="#" id="heroWhatsapp" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.15 8.15 0 01-1.26-4.38c0-4.51 3.67-8.18 8.19-8.18 4.51 0 8.18 3.67 8.18 8.18 0 4.52-3.67 8.24-8.12 8.24zm4.48-6.13c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.17.25-.64.8-.78.96-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.17 1.73 2.64 4.2 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29z"></path></svg>
+          Consultar por WhatsApp
+        </a>
+        <a href="#catalogo" class="btn btn-outline btn-lg">Ver catálogo</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>+200</strong><span>Eventos realizados</span></div>
+        <div class="stat"><strong>100%</strong><span>Empresa familiar</span></div>
+        <div class="stat"><strong>⭐ 5.0</strong><span>Clientes felices</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="scallop-row scallop-a" id="scallop1" aria-hidden="true"></div>
+
+  <!-- ============ CATÁLOGO ============ -->
+  <section class="section-pad" id="catalogo">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Nuestro Catálogo de Juegos</h2>
+        <p class="section-note">4 horas de alquiler, entrega e instalación incluida.</p>
+      </div>
+      <div class="catalog-filters" id="catalogFilters"></div>
+      <div class="catalog-grid" id="catalogGrid"></div>
+    </div>
+  </section>
+
+  <div class="scallop-row scallop-b" id="scallop2" aria-hidden="true"></div>
+
+  <!-- ============ MOMENTOS ============ -->
+  <section class="section-pad momentos-section" id="momentos">
+    <div class="container">
+      <div class="section-head light">
+        <h2 class="section-title">Nuestros Momentos Únicos</h2>
+        <p class="section-note">Fotos reales de las fiestas que armamos.</p>
+      </div>
+      <div class="moments-grid" id="momentsGrid"></div>
+    </div>
+  </section>
+
+  <div class="scallop-row scallop-c" id="scallop3" aria-hidden="true"></div>
+
+  <!-- ============ CTA ============ -->
+  <section class="section-pad cta-section" id="contacto">
+    <div class="container cta-inner">
+      <h2>¿Listo para tu próximo evento?</h2>
+      <p>Escribinos y te ayudamos a elegir los juegos ideales.</p>
+      <a href="#" id="ctaWhatsapp" class="btn btn-dark btn-lg" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+    </div>
+  </section>
+
+  <div class="scallop-row scallop-d" id="scallop4" aria-hidden="true"></div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-logo">
+      <svg width="26" height="11" viewBox="0 0 30 12" aria-hidden="true">
+        <circle cx="6" cy="12" r="8" fill="#C42D64"></circle>
+        <circle cx="15" cy="12" r="8" fill="#FFB627"></circle>
+        <circle cx="24" cy="12" r="8" fill="#157A56"></circle>
+      </svg>
+      <span class="footer-brand">Momentos Únicos</span>
+    </div>
+    <p class="footer-desc">Alquiler de inflables, metegoles y tejos para cumpleaños y eventos familiares.</p>
+    <div class="footer-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#momentos">Momentos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div class="footer-social">
+      <a href="#" id="footerWhatsapp" aria-label="WhatsApp" target="_blank" rel="noopener">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.15 8.15 0 01-1.26-4.38c0-4.51 3.67-8.18 8.19-8.18 4.51 0 8.18 3.67 8.18 8.18 0 4.52-3.67 8.24-8.12 8.24zm4.48-6.13c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.17.25-.64.8-.78.96-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.17 1.73 2.64 4.2 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29z"></path></svg>
+      </a>
+    </div>
+    <p class="footer-copy">© <span id="anioActual"></span> Momentos Únicos.</p>
+  </div>
+</footer>
+
+<a href="#" id="floatWhatsapp" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.15 8.15 0 01-1.26-4.38c0-4.51 3.67-8.18 8.19-8.18 4.51 0 8.18 3.67 8.18 8.18 0 4.52-3.67 8.24-8.12 8.24zm4.48-6.13c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.17.25-.64.8-.78.96-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.17 1.73 2.64 4.2 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29z"></path></svg>
+</a>
+
+<script>
+(function(){
+'use strict';
+
+/* ============================================================
+   CONFIGURACIÓN — reemplazar antes de publicar
+   ============================================================ */
+// TODO: reemplazar por el número real de WhatsApp del negocio
+// Formato: 54 9 [código de área] [número], sin espacios ni signos.
+const WHATSAPP_NUMBER = '5491136284435';
+
+/* ============================================================
+   DATOS: CATÁLOGO DE JUEGOS
+   ============================================================ */
+const juegos = [
+  {
+    id:1,
+    titulo:'Castillo Inflable 3x3 con tobogán',
+    categoria:'Inflables',
+    precio:50000,
+    horas:4,
+    imagen:'Catalogo/inflable1.png',
+    descripcion:'El reino oficial de los saltos, donde los chicos gastan toda su energía rebotando sin parar.'
+  },
+  {
+    id:2,
+    titulo:'Castillo Inflable 3x3',
+    categoria:'Inflables',
+    precio:40000,
+    horas:4,
+    imagen:'Catalogo/inflable2.png',
+    descripcion:'Un castillo gigante de colores y diversión asegurada para que los más peques jueguen toda la tarde.'
+  },
+  {
+    id:3,
+    titulo:'Castillo Inflable 2x3',
+    categoria:'Inflables',
+    precio:30000,
+    horas:4,
+    imagen:'Catalogo/inflable3.png',
+    descripcion:'El alma del cumple: el lugar perfecto para inventar aventuras, hacer piruetas y llenarse de carcajadas.'
+  },
+  {
+    id:4,
+    titulo:'Metegol',
+    categoria:'Metegoles',
+    precio:20000,
+    horas:4,
+    imagen:'Catalogo/metegol1.png',
+    descripcion:'El mini-torneo más divertido de la fiesta, un clásico infaltable que atrapa a todos los amiguitos (¡y a más de un papá también!).'
+  },
+  {
+    id:6,
+    titulo:'Chancha de Tejo',
+    categoria:'Tejos',
+    precio:20000,
+    horas:4,
+    imagen:'Catalogo/tejo1.png',
+    descripcion:'Pura velocidad y reflejos rápidos en un desafío súper dinámico que los mantiene entretenidos desde el primer segundo.'
+  },
+];
+
+/* ============================================================
+   DATOS: NUESTROS MOMENTOS ÚNICOS
+   La propiedad "images" es un array: cada evento puede tener
+   varias fotos que se recorren con el mini-carrusel.
+   ============================================================ */
+const momentos = [
+  {
+    id:1,
+    titulo:'26/07/2067 <br> Evento Benefico de evangelistas',
+    images:[
+      'momentos/26.7.2026/1.png',
+      'momentos/26.7.2026/2.png',
+      'momentos/26.7.2026/3.png'
+    ]
+  },
+];
+
+/* ============================================================
+   REFERENCIAS DOM
+   ============================================================ */
+const header = document.getElementById('header');
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+const catalogFilters = document.getElementById('catalogFilters');
+const catalogGrid = document.getElementById('catalogGrid');
+const momentsGrid = document.getElementById('momentsGrid');
+const carouselIndex = {};
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+function formatearPrecio(valor){
+  return '$' + valor.toLocaleString('es-AR');
+}
+
+function crearLinkWhatsApp(mensaje){
+  return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(mensaje);
+}
+
+function claseCategoria(categoria){
+  const mapa = {Inflables:'cat-inflables', Metegoles:'cat-metegoles', Tejos:'cat-tejos'};
+  return mapa[categoria] || '';
+}
+
+/* ============================================================
+   FESTONES (firma visual entre secciones)
+   ============================================================ */
+function generarFestones(){
+  const ids = ['scallop1','scallop2','scallop3','scallop4'];
+  ids.forEach(function(id){
+    const el = document.getElementById(id);
+    if(!el) return;
+    let html = '';
+    for(let i=0;i<60;i++){ html += '<span></span>'; }
+    el.innerHTML = html;
+  });
+}
+
+/* ============================================================
+   CATÁLOGO — render + filtros
+   ============================================================ */
+function renderFiltros(){
+  const categorias = ['Todos'].concat(Array.from(new Set(juegos.map(function(j){return j.categoria;}))));
+  catalogFilters.innerHTML = categorias.map(function(cat,i){
+    return '<button class="filter-btn'+(i===0?' active':'')+'" data-filtro="'+cat+'">'+cat+'</button>';
+  }).join('');
+
+  catalogFilters.addEventListener('click', function(e){
+    const btn = e.target.closest('.filter-btn');
+    if(!btn) return;
+    catalogFilters.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    renderCatalogo(btn.dataset.filtro);
+  });
+}
+
+function renderCatalogo(filtro){
+  filtro = filtro || 'Todos';
+  const lista = filtro === 'Todos' ? juegos : juegos.filter(function(j){return j.categoria === filtro;});
+
+  catalogGrid.innerHTML = lista.map(function(juego){
+    const mensaje = 'Hola! Me gustaría consultar sobre "'+juego.titulo+'" para mi evento.';
+    return ''+
+    '<article class="game-card '+claseCategoria(juego.categoria)+'">'+
+      '<div class="game-image-wrap">'+
+        '<img src="'+juego.imagen+'" alt="'+juego.titulo+'" loading="lazy" class="game-image">'+
+        '<span class="game-badge">'+juego.categoria+'</span>'+
+      '</div>'+
+      '<div class="game-info">'+
+        '<h3 class="game-title">'+juego.titulo+'</h3>'+
+        '<p class="game-desc">'+juego.descripcion+'</p>'+
+        '<div class="game-footer">'+
+          '<span class="game-price">'+formatearPrecio(juego.precio)+' <small>x '+juego.horas+' hs</small></span>'+
+        '</div>'+
+        '<a href="'+crearLinkWhatsApp(mensaje)+'" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block btn-small">Alquilar este juego</a>'+
+      '</div>'+
+    '</article>';
+  }).join('');
+
+  // Las tarjetas nuevas ya son visibles: reinician su propia animación de entrada.
+}
+
+/* ============================================================
+   MOMENTOS — render + mini-carrusel
+   ============================================================ */
+function renderMomentos(){
+  momentsGrid.innerHTML = momentos.map(function(momento){
+    carouselIndex[momento.id] = 0;
+    const multiple = momento.images.length > 1;
+
+    const slides = momento.images.map(function(img,idx){
+      return '<div class="moment-slide"><img src="'+img+'" alt="'+momento.titulo+' - foto '+(idx+1)+'" loading="lazy"></div>';
+    }).join('');
+
+    const dots = multiple ? '<div class="moment-dots" data-id="'+momento.id+'">'+
+      momento.images.map(function(_,idx){
+        return '<button class="moment-dot'+(idx===0?' active':'')+'" data-index="'+idx+'" aria-label="Ver foto '+(idx+1)+'"></button>';
+      }).join('')+'</div>' : '';
+
+    const arrows = multiple ? ''+
+      '<button class="moment-arrow moment-arrow-prev" data-id="'+momento.id+'" data-dir="-1" aria-label="Foto anterior">‹</button>'+
+      '<button class="moment-arrow moment-arrow-next" data-id="'+momento.id+'" data-dir="1" aria-label="Foto siguiente">›</button>' : '';
+
+    const counter = multiple ? '<span class="moment-counter" data-id="'+momento.id+'">1/'+momento.images.length+'</span>' : '';
+
+    return ''+
+    '<article class="moment-card">'+
+      '<div class="moment-tape"></div>'+
+      '<div class="moment-carousel" data-id="'+momento.id+'">'+
+        '<div class="moment-track" data-track="'+momento.id+'">'+slides+'</div>'+
+        arrows+counter+
+      '</div>'+
+      dots+
+      '<div class="moment-info"><p class="moment-title">📍 '+momento.titulo+'</p></div>'+
+    '</article>';
+  }).join('');
+}
+
+function actualizarCarrusel(id){
+  const momento = momentos.find(function(m){return m.id === id;});
+  const index = carouselIndex[id];
+  const track = document.querySelector('[data-track="'+id+'"]');
+  if(track) track.style.transform = 'translateX(-'+(index*100)+'%)';
+
+  const dotsContainer = document.querySelector('.moment-dots[data-id="'+id+'"]');
+  if(dotsContainer){
+    dotsContainer.querySelectorAll('.moment-dot').forEach(function(dot,i){
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
+  const counter = document.querySelector('.moment-counter[data-id="'+id+'"]');
+  if(counter) counter.textContent = (index+1)+'/'+momento.images.length;
+}
+
+function moverCarrusel(id, direccion){
+  const momento = momentos.find(function(m){return m.id === id;});
+  const total = momento.images.length;
+  carouselIndex[id] = (carouselIndex[id] + direccion + total) % total;
+  actualizarCarrusel(id);
+}
+
+function irASlide(id, index){
+  carouselIndex[id] = index;
+  actualizarCarrusel(id);
+}
+
+function initCarruselEventos(){
+  momentsGrid.addEventListener('click', function(e){
+    const arrow = e.target.closest('.moment-arrow');
+    if(arrow){
+      moverCarrusel(parseInt(arrow.dataset.id,10), parseInt(arrow.dataset.dir,10));
+      return;
+    }
+    const dot = e.target.closest('.moment-dot');
+    if(dot){
+      const dotsContainer = dot.closest('.moment-dots');
+      irASlide(parseInt(dotsContainer.dataset.id,10), parseInt(dot.dataset.index,10));
+    }
+  });
+}
+
+function initSwipe(){
+  document.querySelectorAll('.moment-carousel').forEach(function(carousel){
+    let startX = 0;
+    let dragging = false;
+    const id = parseInt(carousel.dataset.id,10);
+
+    carousel.addEventListener('touchstart', function(e){
+      startX = e.touches[0].clientX;
+      dragging = true;
+    }, {passive:true});
+
+    carousel.addEventListener('touchend', function(e){
+      if(!dragging) return;
+      dragging = false;
+      const diff = startX - e.changedTouches[0].clientX;
+      if(Math.abs(diff) > 40){
+        moverCarrusel(id, diff > 0 ? 1 : -1);
+      }
+    }, {passive:true});
+  });
+}
+
+/* ============================================================
+   MENÚ MÓVIL
+   ============================================================ */
+function initMenu(){
+  navToggle.addEventListener('click', function(){
+    const abierto = navMenu.classList.toggle('active');
+    navToggle.classList.toggle('active', abierto);
+    navToggle.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+  });
+  navMenu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      navMenu.classList.remove('active');
+      navToggle.classList.remove('active');
+      navToggle.setAttribute('aria-expanded','false');
+    });
+  });
+}
+
+/* ============================================================
+   SOMBRA DE HEADER AL HACER SCROLL
+   ============================================================ */
+function initHeaderScroll(){
+  window.addEventListener('scroll', function(){
+    header.classList.toggle('scrolled', window.scrollY > 16);
+  });
+}
+
+/* ============================================================
+   ENLACES DE WHATSAPP ESTÁTICOS
+   ============================================================ */
+function initEnlacesWhatsApp(){
+  const mensajeGeneral = '¡Hola! Quiero consultar por el alquiler de juegos para mi evento. 🎉';
+  const link = crearLinkWhatsApp(mensajeGeneral);
+  ['navWhatsapp','heroWhatsapp','ctaWhatsapp','footerWhatsapp','floatWhatsapp'].forEach(function(id){
+    const el = document.getElementById(id);
+    if(el) el.href = link;
+  });
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+generarFestones();
+renderFiltros();
+renderCatalogo();
+renderMomentos();
+initCarruselEventos();
+initSwipe();
+initMenu();
+initHeaderScroll();
+initEnlacesWhatsApp();
+document.getElementById('anioActual').textContent = new Date().getFullYear();
+
+})();
+</script>
+</body>
+</html>
