@@ -27,15 +27,6 @@
 </script>
 
 <style>
-/* ============================================================
-   MOMENTOS ÚNICOS — Hoja de estilos
-   Paleta: violeta tinta (estructura/noche), magenta (acento),
-   marigold (spotlight), verde césped (sección Momentos).
-   Tipografía: Fredoka (display, redondeada como un inflable)
-   + Nunito (texto). Firma visual: festón de "castillo" entre
-   secciones, construido con semicírculos CSS (no degradés).
-   ============================================================ */
-
 :root{
   --violet-ink:#2B1F4E;
   --violet-ink-deep:#1C1433;
@@ -494,11 +485,6 @@ a:focus-visible,button:focus-visible{
 (function(){
 'use strict';
 
-/* ============================================================
-   CONFIGURACIÓN — reemplazar antes de publicar
-   ============================================================ */
-// TODO: reemplazar por el número real de WhatsApp del negocio
-// Formato: 54 9 [código de área] [número], sin espacios ni signos.
 const WHATSAPP_NUMBER = '5491136284435';
 
 /* ============================================================
@@ -511,7 +497,7 @@ const juegos = [
     categoria:'Inflables',
     precio:50000,
     horas:4,
-    imagen:'Catalogo/inflable1.png',
+    imagen:'Catalogo/inflable.png',
     descripcion:'El reino oficial de los saltos, donde los chicos gastan toda su energía rebotando sin parar.'
   },
   {
@@ -520,7 +506,7 @@ const juegos = [
     categoria:'Inflables',
     precio:40000,
     horas:4,
-    imagen:'Catalogo/inflable2.png',
+    imagen:'Catalogo/inflable.png',
     descripcion:'Un castillo gigante de colores y diversión asegurada para que los más peques jueguen toda la tarde.'
   },
   {
@@ -529,7 +515,7 @@ const juegos = [
     categoria:'Inflables',
     precio:30000,
     horas:4,
-    imagen:'Catalogo/inflable3.png',
+    imagen:'Catalogo/inflable.png',
     descripcion:'El alma del cumple: el lugar perfecto para inventar aventuras, hacer piruetas y llenarse de carcajadas.'
   },
   {
@@ -552,11 +538,6 @@ const juegos = [
   },
 ];
 
-/* ============================================================
-   DATOS: NUESTROS MOMENTOS ÚNICOS
-   La propiedad "images" es un array: cada evento puede tener
-   varias fotos que se recorren con el mini-carrusel.
-   ============================================================ */
 const momentos = [
   {
     id:1,
